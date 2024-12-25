@@ -33,17 +33,18 @@
     // بارگذاری مدل
     const loader = new GLTFLoader();
     loader.load(
-      './model.glb',
-      (gltf) => {
-        const model = gltf.scene;
-        model.scale.set(0.1, 0.1, 0.1); // تنظیم اندازه مدل
-        scene.add(model);
-      },
-      undefined,
-      (error) => {
-        console.error('خطا در بارگذاری مدل:', error);
-      }
-    );
+  'https://github.com/ygnko/webxr-glb-viewer/blob/main/model.glb', // لینک جدید فایل مدل
+  (gltf) => {
+    const model = gltf.scene;
+    model.scale.set(0.1, 0.1, 0.1); // تنظیم مقیاس مدل
+    scene.add(model);
+  },
+  undefined,
+  (error) => {
+    console.error('خطا در بارگذاری مدل:', error);
+  }
+);
+
 
     // حلقه رندر
     function animate() {
